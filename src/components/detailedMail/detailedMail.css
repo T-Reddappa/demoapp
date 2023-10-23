@@ -22,3 +22,10 @@
   font-weight: 600;
   margin-bottom: 1rem;
 }
+
+.mail-body {
+  text-align: start;
+  font-size: 14px;
+  margin-top: 1rem;
+  line-height: 1.5;
+}

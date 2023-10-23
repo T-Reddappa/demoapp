@@ -23,8 +23,7 @@ export const EmailProvider = ({ children }) => {
         `https://flipkart-email-mock.now.sh/?id=${mailId}`
       );
       const data = await response.json();
-      console.log(data.list);
-      return data.list;
+      return data.body;
     } catch (e) {
       console.log(e);
     }

@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./detailedMail.css";
 import { EmailContext } from "../../context/EmailContext";
 
-const DetailedMail = ({ mailBody }) => {
+const DetailedMail = () => {
   const { getEmailBody, selectedMail } = useContext(EmailContext);
+  const [mailBody, setMailBody] = useState("");
 
   const date = new Date(selectedMail?.date);
 
@@ -25,10 +26,16 @@ const DetailedMail = ({ mailBody }) => {
   useEffect(() => {
     const fetchEmailBody = async () => {
       const response = await getEmailBody(selectedMail.id);
-      console.log(response, "resp");
+      const body = response.replace("<div>", "").replace("</div>", "");
+
+      setMailBody(body);
     };
     fetchEmailBody();
   }, [selectedMail]);
+
+  const textToDisplay = mailBody?.split("</p>");
+  console.log(textToDisplay);
+
   return (
     <div className="detailed-mail-box">
       <div className="sender-initial">
@@ -43,7 +50,11 @@ const DetailedMail = ({ mailBody }) => {
           <button className="favorite-btn">Mark as favorite</button>
         </div>
 
-        <div className="body">{mailBody ? mailBody : "nomai"}</div>
+        <div className="mail-body">
+          {textToDisplay?.map((para) => (
+            <p>{para.replace("<p>", "")}</p>
+          ))}
+        </div>
       </div>
     </div>
   );

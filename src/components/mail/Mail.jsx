@@ -41,8 +41,8 @@ const Mail = ({ mail }) => {
             {">"}
           </span>
         </p>
-        <p className="subject">
-          Subject: <span> {mail.subject}</span>
+        <p>
+          Subject: <span className="subject"> {mail.subject}</span>
         </p>
         <p className="description">{mail.short_description}</p>
         <div className="date">{formattedDateTime}</div>
