@@ -1,0 +1,24 @@
+.detailed-mail-box {
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.detailed-mail-box .body-container {
+  width: 100%;
+  color: #636363;
+}
+
+.detailed-mail-box .body-container .subject {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.sub {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}

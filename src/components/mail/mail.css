@@ -1,0 +1,38 @@
+.mail-box {
+  width: 100%;
+  height: auto;
+  border: 1px solid #cfd2dc;
+  display: flex;
+  padding: 0.4rem;
+  border-radius: 5px;
+  gap: 1rem;
+  justify-content: start;
+  align-items: start;
+  margin: 1rem 0;
+}
+
+.sender-initial {
+  width: 2rem;
+  height: 2rem;
+  background-color: #e54065;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.mail-details {
+  font-size: 12px;
+  color: #636363;
+  line-height: 1.6;
+}
+
+span {
+  font-weight: 600;
+}
+
+.description {
+  margin: 0.3rem 0;
+}
